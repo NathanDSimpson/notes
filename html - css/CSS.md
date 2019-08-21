@@ -71,4 +71,48 @@ __`Combinators`__: These are not exactly selectors themselves, but ways of combi
 
 - __General sibling combinator__	`A ~ B`	Any element matching B that is one of the next siblings of an element matching A (that is, one of the next children of the same parent).
 
-`__Multiple selectors`__: Again, these are not separate selectors; the idea is that you can put multiple selectors on the same CSS rule, separated by commas, to apply a single set of declarations to all the elements selected by those selectors.
+__`Multiple selectors`__: Again, these are not separate selectors; the idea is that you can put multiple selectors on the same CSS rule, separated by commas, to apply a single set of declarations to all the elements selected by those selectors.
+
+# Units
+
+__Absolute:__ 
+- `q, mm, cm, in` - Quarter millimeters, millimeters, centimeters, or inches
+- `pt, pc` - Points (1/72 of an inch) or picas (12 points)
+
+__Relative__
+- `em` -  1em is the same as the font-size of the current element. The default base font-size given to web pages by web browsers before CSS styling is applied is 16 pixels, which means the computed value of 1em is 16 pixels for an element by default. But beware — font sizes are inherited by elements from their parents, so if different font sizes have been set on parent elements, the pixel equivalent of an em can start to become complicated.
+
+- `rem` - The rem (root em) works in exactly the same way as the em, except that it will always equal the size of the default base font-size; inherited font sizes will have no effect, so this sounds like a much better option than em, although rems don't work in older versions of Internet Explorer
+
+- `percentages` - refer to the percent as compared to the parent
+
+- `unitless` 
+  - Anything with a value of zero can be unitless. 
+  - Another case is line-height. The line-height becomes a multiple of the font size. 
+    - (ie - `line-height: 1.5;`)
+  - Quantities - like how many times an animation should rotate 
+```css
+  @keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+p {
+  color: red;
+  width: 100px;
+  font-size: 40px;
+  transform-origin: center;
+}
+
+p:hover {
+  animation-name: rotate;
+  animation-duration: 0.6s;
+  animation-timing-function: linear;
+  animation-iteration-count: 5;
+}
+```
