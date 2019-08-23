@@ -171,25 +171,41 @@ __`revert`__
 
 # Box Model
 
-### __Properties of note:__
+## __Properties of note:__
 
-- `background-clip`: By default background-color/background-image extend to the edge of the border. This behaviour can be changed using the background-clip property.
+`background-clip`: By default background-color/background-image extend to the edge of the border. This behaviour can be changed using the background-clip property.
   - `{ background-clip: border-box;  }` - default 
   - `{ background-clip: padding-box; }`
   - `{ background-clip: content-box; }` 
 
-- `overflow`
+`overflow`
   - `auto`: If there is too much content, the overflowing content is hidden and scroll bars are shown to let the user scroll to see all the content.
-
   - `hidden`: If there is too much content, the overflowing content is hidden.
-
   - `visible`: If there is too much content, the overflowing content is shown outside of the box (this is usually the default behavior.)
 
-- `box-sizing: border-box;`: Changes the box model height and width to include border and padding.
+`box-sizing: border-box;`: Changes the box model height and width to include border and padding.
 
-- `outline`: behaves like the border but is drawn on top of the box without changing the size of the box (to be specific, the outline is drawn outside the border box, inside the margin area.)
+`outline`: behaves like the border but is drawn on top of the box without changing the size of the box (to be specific, the outline is drawn outside the border box, inside the margin area.)
 
-### __Types of boxes__
+## __Types of boxes__
+
+The type of box applied to an element is specified by the __`display`__ property.
+
+ __`block`__: stacked upon other boxes (i.e. content before and after the box appears on a separate line), and can have width and height set on it. The default.
+
+__`inline`__ opposite of a block box - it will appear on the same line as surrounding text and other inline elements, and its content will break with the flow of the text, like lines of text in a paragraph.) 
+  - `width` and `height` settings have no effect on inline boxes. 
+  - `padding`, `margin` and `border` set on inline boxes will update the position of surrounding text, but will not affect the position of surrounding block boxes.
+
+__`inline-block`__ box is something in between. It flows with surrounding text and other inline elements without creating line breaks before and after. 
+  - Can be sized using `width` and `height` 
+  - Maintains its block integrity like a block box. 
+  - Won't be broken across paragraph lines like an inline box. 
+  - `Inline-block boxes` will break to a new line if there is not enough room, where as an `inline box` would break across two lines.
+
+__`flex-box`__
+
+ 
 
 
 
