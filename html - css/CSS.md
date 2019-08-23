@@ -169,5 +169,28 @@ __`unset`__ (not supported in Internet Explorer)
 __`revert`__
 - Reverts the property to the value it would have had if the current origin had not applied any styles to it. In other words, the property's value is set to the user stylesheet's value for the property (if one is set), otherwise, the property's value is taken from the user agent's default stylesheet.
 
+# Box Model
+
+### __Properties of note:__
+
+- `background-clip`: By default background-color/background-image extend to the edge of the border. This behaviour can be changed using the background-clip property.
+  - `{ background-clip: border-box;  }` - default 
+  - `{ background-clip: padding-box; }`
+  - `{ background-clip: content-box; }` 
+
+- `overflow`
+  - `auto`: If there is too much content, the overflowing content is hidden and scroll bars are shown to let the user scroll to see all the content.
+
+  - `hidden`: If there is too much content, the overflowing content is hidden.
+
+  - `visible`: If there is too much content, the overflowing content is shown outside of the box (this is usually the default behavior.)
+
+- `box-sizing: border-box;`: Changes the box model height and width to include border and padding.
+
+- `outline`: behaves like the border but is drawn on top of the box without changing the size of the box (to be specific, the outline is drawn outside the border box, inside the margin area.)
+
+### __Types of boxes__
+
+
 
 
