@@ -116,3 +116,58 @@ p:hover {
   animation-iteration-count: 5;
 }
 ```
+
+# Colors
+__Keywords__
+- `color: blue;`
+
+__Hexadecimal__
+- `color: #0000ff;` (blue)
+
+__RGB__
+- `rgb(0,0,255)` (blue)
+
+__HSL__ (hue, saturation, lightness)
+- `color: hsl(240, 100%, 50%)` (blue)
+- Hue: 0-360 representing the base color as on a color wheel
+- Saturation: 0-100%,  0 = gray, 100% = full saturation
+- Lightness: 0-100%,  0 = black, 100% = white
+
+# Transparency
+- `Opacity property` sets the transparency of all selected elements and their children.
+```css
+div {
+  background-color: rgb(255,0,0);
+  opacity: 0.5;
+}
+```
+
+- `RGBA and HSLA:` Same as RGB() and HSA(), but take a fourth parameter for the transparency.
+  - The fourth parameter is bewteen 0 and 1 and called the alpha channel.
+  - `rgba(255,0,0,0.5)` or `hsla(240,100%,50%,0.5)`
+
+
+# Inheritance 
+
+The CSS shorthand property __`all`__ can be used to apply one of these inheritance values to (almost) all properties at once. It's a convenient way to undo changes made that can't be tracked down, or if you'd like to start fresh.
+
+```css 
+div ul li {
+  all: unset;
+} 
+```
+
+__`inherit`__
+- Sets the property value applied to a selected element to be the same as that of its parent element.
+
+__`initial`__ (not supported in Internet Explorer)
+- Applies the initial (or default) value of a property to an element. This initial value is set by the browser. It can be applied to any CSS property.
+
+__`unset`__ (not supported in Internet Explorer)
+- Resets the property to its natural value, which means that if the property is naturally inherited it acts like inherit, otherwise it acts like initial.
+
+__`revert`__
+- Reverts the property to the value it would have had if the current origin had not applied any styles to it. In other words, the property's value is set to the user stylesheet's value for the property (if one is set), otherwise, the property's value is taken from the user agent's default stylesheet.
+
+
+
